@@ -1,11 +1,13 @@
 package org.example;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class exercicios {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         notas(scan);
+        senha(scan);
     }
 
     public static void notas(Scanner scan){
@@ -21,6 +23,22 @@ public class exercicios {
 
         System.out.println("Nota válida.\nA nota digitada foi: " + nota);
 
+    }
+
+    public static void senha(Scanner scan){
+
+        System.out.println("Informe o seu nome: ");
+        String nome = scan.next();
+
+        System.out.println("Informe a sua senha: ");
+        String senha = scan.next();
+
+        while (nome.equalsIgnoreCase(senha)){
+            System.out.println("A sua senha não pode ser igual o seu nome.\nInforme uma nova senha: ");
+            senha = scan.next();
+        }
+
+        System.out.println("Senha válida!");
     }
 
 }
